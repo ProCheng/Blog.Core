@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <BaseOutputPath>..\Blog.Core.Api\bin</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IRepository\Blog.Core.IRepository.csproj" />
+    <ProjectReference Include="..\IServices\Blog.Core.IServices.csproj" />
+    <ProjectReference Include="..\Model\Blog.Core.Model.csproj" />
+    <ProjectReference Include="..\Repository\Blog.Core.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

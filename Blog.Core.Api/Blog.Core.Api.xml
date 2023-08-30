@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blog.Core.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Blog.Core.Api.AOP.BaseAOP.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            AOP的拦截方法
+            </summary>
+            <param name="invocation"></param>
+        </member>
+        <member name="M:Blog.Core.Api.AOP.BaseAOP.CustomCacheKey(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            自定义缓存的key
+            </summary>
+            <param name="invocation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.AOP.BaseAOP.GetArgumentValue(System.Object)">
+            <summary>
+            object 转 string
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.AOP.BaseAOP.MD5Encrypt16(System.String)">
+            <summary>
+            16位MD5加密
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Blog.Core.Api.Controllers.UserController.hubContext">
+            <summary>
+            左边是hub中心，右边是客户端接口，官网称强类型
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Api.Controllers.UserController.LoginIn(Blog.Core.Model.Entity.SysUser)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Core.Api.Filter.GlobalExceptionsFilter">
+            <summary>
+            全局异常错误日志
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Api.Filter.GlobalExceptionsFilter.WriteLog(System.String,System.Exception)">
+            <summary>
+            自定义返回格式
+            </summary>
+            <param name="throwMsg"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Blog.Core.Api.Filter.JsonErrorResponse.Message">
+            <summary>
+            生产环境的消息
+            </summary>
+        </member>
+        <member name="P:Blog.Core.Api.Filter.JsonErrorResponse.DevelopmentMessage">
+            <summary>
+            开发环境的消息
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Api.HostedService.InitializationHostServiceSetup.AddInitializationHostServiceSetup(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            应用初始化服务注入
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Blog.Core.Api.Hubs.Messages">
+            <summary>
+            消息类
+            </summary>
+        </member>
+        <member name="F:Blog.Core.Api.Hubs.ChatHub._connections">
+            <summary>
+            连接池
+            </summary>
+        </member>
+        <member name="F:Blog.Core.Api.Hubs.ChatHub._messages">
+            <summary>
+            消息池
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.ChatHub.AddToGroup(System.String)">
+            <summary>
+            加入指定组
+            </summary>
+            <param name="groupName">组名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.ChatHub.RemoveFromGroup(System.String)">
+            <summary>
+            退出指定组
+            </summary>
+            <param name="groupName">组名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.ChatHub.SendMessageToUser(System.String,System.String)">
+            <summary>
+            发送信息到指定人
+            </summary>
+            <param name="user">成员名</param>
+            <param name="message">信息内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.ChatHub.SendMessageToAll(System.String)">
+            <summary>
+            发送消息到所有人
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.ChatHub.SendMessageToGroup(System.String,System.String)">
+            <summary>
+            发送消息到指定组
+            </summary>
+            <param name="group"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.ChatHub.RoomInit">
+            <summary>
+            进入聊天室，初始化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.IChatClient.ReceiveMessage(System.Object)">
+            <summary>
+            接收信息
+            </summary>
+            <param name="message">信息内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.IChatClient.ReceiveMessageLog(System.Object)">
+            <summary>
+            接收消息历史
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Api.Hubs.IChatClient.ReceiveAllUser(System.Object)">
+            <summary>
+            接收所有用户
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Core.Api.Policy.MyAuthorizationHander">
+            <summary>
+            jwt授权 策略
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Api.Policy.MyAuthorizationRequirement">
+            <summary>
+            授权验证参数
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Api.ServiceExtensions.HttpContextSetup">
+            <summary>
+            HttpContext 相关服务
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Api.ServiceExtensions.HttpContextSetup.AddHttpContextSetup(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            添加 HttpContext 相关服务 授权需要User信息
+            </summary>
+            <param name="services"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Blog.Core.Controllers.HomeControllers">
+            <summary>
+            主页控制器
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Controllers.HomeControllers.GetUser">
+            <summary>
+            这是一个注释
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Core.Controllers.HomeControllers.GetTest">
+            <summary>
+            测试 SqlSugar
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Core.Middlewares.SwaggerMiddleware">
+            <summary>
+            Swagger中间件
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Middlewares.SwaggerMiddleware.UseSwaggerMiddle(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            开启 Swagger中间件
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:Blog.Core.RouterAttribute.CustomRouteAttribute">
+            <summary>
+            自定义路由 /api/{version}/[controler]/[action]
+            </summary>
+        </member>
+        <member name="P:Blog.Core.RouterAttribute.CustomRouteAttribute.GroupName">
+            <summary>
+            分组名称,是来实现接口 IApiDescriptionGroupNameProvider
+            </summary>
+        </member>
+        <member name="M:Blog.Core.RouterAttribute.CustomRouteAttribute.#ctor(Blog.Core.ServiceExtensions.CustomApiVersion.ApiVersions,System.String)">
+            <summary>
+            自定义版本+路由构造函数，继承基类路由
+            </summary>
+            <param name="actionName"></param>
+            <param name="version"></param>
+        </member>
+        <member name="T:Blog.Core.ServiceExtensions.AuthorizationSetup">
+            <summary>
+            系统 授权 服务
+            </summary>
+        </member>
+        <member name="M:Blog.Core.ServiceExtensions.AuthorizationSetup.AddAuthorizationSetup(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            添加系统授权服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Blog.Core.ServiceExtensions.CorsSetup">
+            <summary>
+            Cors 启动服务
+            </summary>
+        </member>
+        <member name="T:Blog.Core.ServiceExtensions.IpPolicyRateLimitSetup">
+            <summary>
+            IPLimit限流 启动服务
+            </summary>
+        </member>
+        <member name="T:Blog.Core.ServiceExtensions.MiniProfilerSetup">
+            <summary>
+            MiniProfiler 启动服务
+            </summary>
+        </member>
+        <member name="T:Blog.Core.ServiceExtensions.SwaggerSetup">
+            <summary>
+            Swagger 启动服务
+            </summary>
+        </member>
+        <member name="M:Blog.Core.ServiceExtensions.SwaggerSetup.AddSwaggerSetup(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            开启 swagger服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Blog.Core.ServiceExtensions.CustomApiVersion">
+            <summary>
+            自定义版本
+            </summary>
+        </member>
+        <member name="T:Blog.Core.ServiceExtensions.CustomApiVersion.ApiVersions">
+            <summary>
+            Api接口版本 自定义
+            </summary>
+        </member>
+        <member name="F:Blog.Core.ServiceExtensions.CustomApiVersion.ApiVersions.V1">
+            <summary>
+            V1 版本
+            </summary>
+        </member>
+        <member name="F:Blog.Core.ServiceExtensions.CustomApiVersion.ApiVersions.V2">
+            <summary>
+            V2 版本
+            </summary>
+        </member>
+        <member name="T:Blog.Core.Extensions.SqlsugarSetup">
+            <summary>
+            SqlSugar 启动服务
+            </summary>
+        </member>
+        <member name="M:Blog.Core.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            注入服务 使用的是 autofac
+            </summary>
+            <param name="builder"></param>
+        </member>
+    </members>
+</doc>
